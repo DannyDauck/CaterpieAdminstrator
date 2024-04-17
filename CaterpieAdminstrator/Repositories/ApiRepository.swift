@@ -4,13 +4,14 @@
 //
 //  Created by Danny Dauck on 14.04.24.
 //
-let API_KEY = Secrets.apiKey.getValue()
+
 
 import Foundation
 
 
 class ApiRepository{
     
+    private let API_KEY = Secrets.apiKey.getValue()
    
     func getCocktail(_ searchText: String) async -> Cocktail?{
         let name = searchText.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
@@ -26,7 +27,6 @@ class ApiRepository{
             return nil
         }
     }
-    
     
 }
 

@@ -16,10 +16,9 @@ class ArticleOverviewViewmodel: ObservableObject{
     
     
     func fetchArticles(){
-        Task{
-            repo.fetchArticles{
-                self.articles = $0
-            }
+            repo.fetchArticles{[weak self] in
+                self?.articles = $0
+            
         }
     }
 }
