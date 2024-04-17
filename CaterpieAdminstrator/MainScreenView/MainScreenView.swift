@@ -26,7 +26,7 @@ struct MainScreenView: View {
                         .background(Capsule().foregroundStyle(LinearGradient(colors: [.gray, .yellow], startPoint: .bottomLeading, endPoint: .topTrailing)))
                 }
                 NavigationLink(destination: ArticleOverview() ){
-                    Text("Artikel bearbeiten")
+                    Text("Artikel Liste")
                         .font(.title)
                         .padding(.vertical, 5)
                         .foregroundColor(.white)
