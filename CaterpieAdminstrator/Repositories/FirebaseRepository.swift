@@ -20,10 +20,10 @@ class FirebaseRepository{
     func login() async throws{
         
         do{
-            try await auth.signIn(withEmail: "danny.dauck@CaterpieAdmin.com", password: "kjodsj4567@jshaüßJKLO")
+            try await auth.signIn(withEmail: Secrets.email.getValue(), password: Secrets.password.getValue())
         }catch{
             do{
-                try await auth.createUser(withEmail: "danny.dauck@CaterpieAdmin.com", password: "kjodsj4567@jshaüßJKLO")
+                try await auth.createUser(withEmail: Secrets.email.getValue(), password: Secrets.password.getValue())
             }catch{
                 print("could not sign in or up")
             }

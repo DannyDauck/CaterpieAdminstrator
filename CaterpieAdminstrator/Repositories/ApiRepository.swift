@@ -4,7 +4,7 @@
 //
 //  Created by Danny Dauck on 14.04.24.
 //
-let API_KEY = "w3GwUVGOlzkdgNBQItTl5Q==wYWcZBV2swzfXpCt"
+let API_KEY = Secrets.apiKey.getValue()
 
 import Foundation
 

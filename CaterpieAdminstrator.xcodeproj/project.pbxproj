@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D50883302BCFC766009D1E45 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = D508832F2BCFC766009D1E45 /* Secrets.swift */; };
 		D5199CDA2BB1F9A6001B3967 /* CaterpieAdminstratorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5199CD92BB1F9A6001B3967 /* CaterpieAdminstratorApp.swift */; };
 		D5199CDE2BB1F9A7001B3967 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D5199CDD2BB1F9A7001B3967 /* Assets.xcassets */; };
 		D5199CE12BB1F9A7001B3967 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D5199CE02BB1F9A7001B3967 /* Preview Assets.xcassets */; };
@@ -53,6 +54,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D508832F2BCFC766009D1E45 /* Secrets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
 		D5199CD62BB1F9A6001B3967 /* CaterpieAdminstrator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CaterpieAdminstrator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5199CD92BB1F9A6001B3967 /* CaterpieAdminstratorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaterpieAdminstratorApp.swift; sourceTree = "<group>"; };
 		D5199CDD2BB1F9A7001B3967 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -142,6 +144,7 @@
 				D5199CD92BB1F9A6001B3967 /* CaterpieAdminstratorApp.swift */,
 				D5199CDD2BB1F9A7001B3967 /* Assets.xcassets */,
 				D5199CDF2BB1F9A7001B3967 /* Preview Content */,
+				D508832F2BCFC766009D1E45 /* Secrets.swift */,
 			);
 			path = CaterpieAdminstrator;
 			sourceTree = "<group>";
@@ -327,6 +330,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D5FC86962BCC813E005EB0D9 /* CocktailViewViewModel.swift in Sources */,
+				D50883302BCFC766009D1E45 /* Secrets.swift in Sources */,
 				D5199D432BB2F9C4001B3967 /* ArticleOverviewViewmodel.swift in Sources */,
 				D5199CFE2BB2D528001B3967 /* UnitDependency.swift in Sources */,
 				D5199CEC2BB1FD24001B3967 /* ScannerView.swift in Sources */,
