@@ -59,7 +59,7 @@ struct MainScreenView: View {
                 }
                 Spacer()
             }
-            .navigationTitle("Main Screen")
+            .navigationTitle("Willkommen \(FirebaseRepository.shared.userName)!")
             .background(
                 ZStack{
                     Image(.zero)

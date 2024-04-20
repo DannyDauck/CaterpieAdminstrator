@@ -14,6 +14,7 @@ class FirebaseRepository{
     static let shared = FirebaseRepository()
     var auth = FirebaseAuth.Auth.auth()
     var store = Firestore.firestore()
+    var userName = ""
     
     private init(){}
     

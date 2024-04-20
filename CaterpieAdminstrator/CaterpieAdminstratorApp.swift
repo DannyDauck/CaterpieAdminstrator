@@ -27,7 +27,9 @@ struct CaterpieAdminstratorApp: App {
     var body: some Scene {
         WindowGroup {
             if vm.authorized{
-                MainScreenView()
+                //MainScreenView()
+                BTDeviceChoiceView()
+            
             }else{
                 LoginView(vm: vm)
             }

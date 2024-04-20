@@ -14,6 +14,8 @@ class LoginViewViewmodel: ObservableObject{
     
     func checkScan(_ input: String){
         if input.contains(Secrets.loginKey.getValue()){
+            //Der ausgelesene String enthält das Passwort und den Namen
+            FirebaseRepository.shared.userName = input.replacingOccurrences(of: Secrets.loginKey.getValue(), with: "")
             authorized = true
         }
     }

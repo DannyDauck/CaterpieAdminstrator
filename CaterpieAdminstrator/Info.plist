@@ -2,9 +2,21 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>CFBundleDocumentTypes</key>
-	<array>
-		<dict/>
-	</array>
+    <key>NSBluetoothAlwaysUsageDescription</key>
+    <string>App benötigt Bluetooth-Zugriff, um mit Drucker zu verbinden.</string>
+    <key>NSBluetoothPeripheralUsageDescription</key>
+    <string>App benötigt Bluetooth-Zugriff, um mit Peripheriegeräten zu kommunizieren.</string>
+    <key>NSBluetoothServices</key>
+    <array>
+        <!-- Hier können Dienste für Bluetooth-Zugriff definiert werden -->
+        <!-- Beispiel: -->
+        <!-- <string>your.bluetooth.service.uuid</string> -->
+    </array>
+    <key>CFBundleDocumentTypes</key>
+    <array>
+        <!-- Hier können Dokumenttypen definiert werden -->
+        <!-- Beispiel: -->
+        <!-- <dict>...</dict> -->
+    </array>
 </dict>
 </plist>
