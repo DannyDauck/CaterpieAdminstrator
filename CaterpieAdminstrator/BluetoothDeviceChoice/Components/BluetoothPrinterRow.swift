@@ -17,6 +17,8 @@ struct BlueToothPrinterRowView: View {
     
     var body: some View {
         VStack{
+            Text(printer.displayName)
+                .fontWeight(isConnected ?  .bold : .regular)
             HStack{
                 if isConnected {
                     ZStack{
@@ -40,32 +42,32 @@ struct BlueToothPrinterRowView: View {
                     Text("Drucker")
                         .foregroundStyle(cm.txtImportant)
                 }
-                Text(printer.displayName)
-                    .fontWeight(isConnected ?  .bold : .regular)
                 
-                if isConnected{
-                    Button(action: {
-                        BluetoothManager.shared.disconnectDevice(printer.peripheral)
-                        isConnected = false
-                    }){
-                        Text("trennen")
-                    }.buttonStyle(.borderedProminent)
-                        .padding(.leading, 5)
-                   
-                }else{
-                    Button(action:{
-                        BluetoothManager.shared.connectDevice(printer.peripheral)
-                        isConnected = true
-                    }){
-                        Text("verbinden")
-                    }.buttonStyle(.borderedProminent)
-                        .padding(.leading, 5)
-                }
+                
+                
                 
             }.padding(.horizontal)
                 .padding(.vertical,4)
                 .cornerRadius(15)
                 .shadow(radius: 4)
+            if isConnected{
+                Button(action: {
+                    BluetoothManager.shared.disconnectDevice(printer.peripheral)
+                    isConnected = false
+                }){
+                    Text("trennen")
+                }.buttonStyle(.borderedProminent)
+                    .padding(.leading, 5)
+               
+            }else{
+                Button(action:{
+                    BluetoothManager.shared.connectDevice(printer.peripheral)
+                    isConnected = true
+                }){
+                    Text("verbinden")
+                }.buttonStyle(.borderedProminent)
+                    .padding(.leading, 5)
+            }
             if showAppend{
                 ZStack{
                     HStack{
@@ -86,7 +88,8 @@ struct BlueToothPrinterRowView: View {
                             .foregroundStyle(cm.txtImportant)
                     }
                 }.onTapGesture {
-                  //  PrinterManager.shared.addBTprinter(printer)
+                    CocktailViewViewModel.shared.printer = printer
+                    CocktailViewViewModel.shared.sheetIsPresent = false
                 }
             }
         }

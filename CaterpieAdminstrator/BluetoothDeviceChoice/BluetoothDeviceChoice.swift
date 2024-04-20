@@ -9,18 +9,21 @@ import SwiftUI
 import CoreBluetooth
 
 struct BTDeviceChoiceView: View {
+    
+    
     @ObservedObject var bluetoothManager = BluetoothManager.shared
     @State var isScanning = false
     private var cm = ColorManager.shared
     @State var searchText = ""
     @State var currentDevice: CBPeripheral?
     @State var alertIsVisible = false
+    
     private let am = AudioManager()
     
     var body: some View {
         VStack{
             HStack{
-                Text("tt_h1_search_for_bluetooth_devices")
+                Text("Bluetooth-Drucker wählen")
                     .font(.title2)
                     .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
                 Spacer()

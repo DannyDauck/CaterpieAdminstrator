@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CocktailView: View {
     
-    @StateObject var vm = CocktailViewViewModel()
+    @StateObject var vm = CocktailViewViewModel.shared
     
     
     
@@ -49,10 +49,25 @@ struct CocktailView: View {
                     .font(.title2)
                     .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
                     .padding(.top,40)
+                HStack{
+                    Spacer()
+                    Button(action: {
+                        vm.print()
+                    }){
+                        HStack{
+                            Image(systemName: "printer.fill")
+                                .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                            Text("Rezept drucken")
+                        }
+                    }
+                }.padding()
             }
             Spacer()
         }
         .padding()
+        .sheet(isPresented: $vm.sheetIsPresent){
+            BTDeviceChoiceView()
+        }
         .onAppear{
             print(vm.cocktail)
         }
