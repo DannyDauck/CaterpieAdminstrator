@@ -22,10 +22,15 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 struct CaterpieAdminstratorApp: App {
     
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
+    @StateObject var vm =  LoginViewViewmodel()
     
     var body: some Scene {
         WindowGroup {
-            MainScreenView()
+            if vm.authorized{
+                MainScreenView()
+            }else{
+                LoginView(vm: vm)
+            }
         }
     }
 }

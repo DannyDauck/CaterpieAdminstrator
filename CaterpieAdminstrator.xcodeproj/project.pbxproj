@@ -46,6 +46,11 @@
 		D5199D362BB2ECC2001B3967 /* FirebaseRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5199D352BB2ECC2001B3967 /* FirebaseRepository.swift */; };
 		D5199D412BB2F9A7001B3967 /* ArticleOverview.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5199D402BB2F9A7001B3967 /* ArticleOverview.swift */; };
 		D5199D432BB2F9C4001B3967 /* ArticleOverviewViewmodel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5199D422BB2F9C4001B3967 /* ArticleOverviewViewmodel.swift */; };
+		D58FE0FE2BD3C3C000E93182 /* AppendProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58FE0FD2BD3C3C000E93182 /* AppendProductView.swift */; };
+		D58FE1002BD3C46200E93182 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58FE0FF2BD3C46200E93182 /* Product.swift */; };
+		D58FE1022BD3C50D00E93182 /* ArticleDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58FE1012BD3C50D00E93182 /* ArticleDependency.swift */; };
+		D58FE1072BD3E5BD00E93182 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58FE1062BD3E5BD00E93182 /* LoginView.swift */; };
+		D58FE10B2BD3F26A00E93182 /* LoginViewViewmodel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58FE10A2BD3F26A00E93182 /* LoginViewViewmodel.swift */; };
 		D5FC868F2BCC756F005EB0D9 /* ApiRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FC868E2BCC756F005EB0D9 /* ApiRepository.swift */; };
 		D5FC86912BCC7E2A005EB0D9 /* Cocktail.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FC86902BCC7E2A005EB0D9 /* Cocktail.swift */; };
 		D5FC86942BCC7EAA005EB0D9 /* CocktailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FC86932BCC7EAA005EB0D9 /* CocktailView.swift */; };
@@ -70,6 +75,11 @@
 		D5199D352BB2ECC2001B3967 /* FirebaseRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseRepository.swift; sourceTree = "<group>"; };
 		D5199D402BB2F9A7001B3967 /* ArticleOverview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleOverview.swift; sourceTree = "<group>"; };
 		D5199D422BB2F9C4001B3967 /* ArticleOverviewViewmodel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleOverviewViewmodel.swift; sourceTree = "<group>"; };
+		D58FE0FD2BD3C3C000E93182 /* AppendProductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppendProductView.swift; sourceTree = "<group>"; };
+		D58FE0FF2BD3C46200E93182 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		D58FE1012BD3C50D00E93182 /* ArticleDependency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDependency.swift; sourceTree = "<group>"; };
+		D58FE1062BD3E5BD00E93182 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		D58FE10A2BD3F26A00E93182 /* LoginViewViewmodel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewViewmodel.swift; sourceTree = "<group>"; };
 		D5FC868E2BCC756F005EB0D9 /* ApiRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRepository.swift; sourceTree = "<group>"; };
 		D5FC86902BCC7E2A005EB0D9 /* Cocktail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cocktail.swift; sourceTree = "<group>"; };
 		D5FC86932BCC7EAA005EB0D9 /* CocktailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailView.swift; sourceTree = "<group>"; };
@@ -130,6 +140,8 @@
 		D5199CD82BB1F9A6001B3967 /* CaterpieAdminstrator */ = {
 			isa = PBXGroup;
 			children = (
+				D58FE1032BD3E58400E93182 /* Login */,
+				D58FE0FC2BD3C39D00E93182 /* AppendProduct */,
 				D5FC86922BCC7E88005EB0D9 /* CocktailView */,
 				D5199D3F2BB2F968001B3967 /* ArticleOverview */,
 				D5199D342BB2ECA9001B3967 /* Repositories */,
@@ -187,6 +199,8 @@
 				D5199CF92BB2A557001B3967 /* Article.swift */,
 				D5199CFD2BB2D528001B3967 /* UnitDependency.swift */,
 				D5FC86902BCC7E2A005EB0D9 /* Cocktail.swift */,
+				D58FE0FF2BD3C46200E93182 /* Product.swift */,
+				D58FE1012BD3C50D00E93182 /* ArticleDependency.swift */,
 			);
 			path = DataModels;
 			sourceTree = "<group>";
@@ -215,6 +229,23 @@
 				D5199D422BB2F9C4001B3967 /* ArticleOverviewViewmodel.swift */,
 			);
 			path = ArticleOverview;
+			sourceTree = "<group>";
+		};
+		D58FE0FC2BD3C39D00E93182 /* AppendProduct */ = {
+			isa = PBXGroup;
+			children = (
+				D58FE0FD2BD3C3C000E93182 /* AppendProductView.swift */,
+			);
+			path = AppendProduct;
+			sourceTree = "<group>";
+		};
+		D58FE1032BD3E58400E93182 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				D58FE1062BD3E5BD00E93182 /* LoginView.swift */,
+				D58FE10A2BD3F26A00E93182 /* LoginViewViewmodel.swift */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 		D5FC86922BCC7E88005EB0D9 /* CocktailView */ = {
@@ -332,15 +363,20 @@
 				D5199CFE2BB2D528001B3967 /* UnitDependency.swift in Sources */,
 				D5199CEC2BB1FD24001B3967 /* ScannerView.swift in Sources */,
 				D5199CE92BB1F9CA001B3967 /* MainScreenView.swift in Sources */,
+				D58FE1022BD3C50D00E93182 /* ArticleDependency.swift in Sources */,
 				D5199CF82BB21A39001B3967 /* Units.swift in Sources */,
 				D5199CFA2BB2A557001B3967 /* Article.swift in Sources */,
+				D58FE0FE2BD3C3C000E93182 /* AppendProductView.swift in Sources */,
 				D5FC86912BCC7E2A005EB0D9 /* Cocktail.swift in Sources */,
+				D58FE10B2BD3F26A00E93182 /* LoginViewViewmodel.swift in Sources */,
 				D5199D362BB2ECC2001B3967 /* FirebaseRepository.swift in Sources */,
+				D58FE1002BD3C46200E93182 /* Product.swift in Sources */,
 				D5FC86942BCC7EAA005EB0D9 /* CocktailView.swift in Sources */,
 				D5199CF22BB215ED001B3967 /* NewArticleView.swift in Sources */,
 				D5FC868F2BCC756F005EB0D9 /* ApiRepository.swift in Sources */,
 				D5199D412BB2F9A7001B3967 /* ArticleOverview.swift in Sources */,
 				D5199CDA2BB1F9A6001B3967 /* CaterpieAdminstratorApp.swift in Sources */,
+				D58FE1072BD3E5BD00E93182 /* LoginView.swift in Sources */,
 				D5199CF42BB216DE001B3967 /* NewArticleViewViewmodel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

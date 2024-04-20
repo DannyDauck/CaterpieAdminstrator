@@ -14,6 +14,7 @@ struct MainScreenView: View {
         NavigationView {
             VStack{
                 
+                Spacer()
                 
                 NavigationLink(destination: ScannerView() ){
                     Text("Artikel scannen")
@@ -56,8 +57,17 @@ struct MainScreenView: View {
                         .padding(5)
                         .background(Capsule().foregroundStyle(LinearGradient(colors: [.gray, .yellow], startPoint: .bottomLeading, endPoint: .topTrailing)))
                 }
+                Spacer()
             }
             .navigationTitle("Main Screen")
+            .background(
+                ZStack{
+                    Image(.zero)
+                        .resizable()
+                        .scaledToFill()
+                    Color.white.opacity(0.4)
+                }.background(.white.opacity(0.4))
+            )
             .onAppear{
                 Task{
                     do{
