@@ -10,6 +10,7 @@ import SwiftUI
 struct CocktailView: View {
     
     @StateObject var vm = CocktailViewViewModel.shared
+    @StateObject var printerVm = BTPrinterViewModel.shared
     
     
     
@@ -52,7 +53,8 @@ struct CocktailView: View {
                 HStack{
                     Spacer()
                     Button(action: {
-                        vm.print()
+                        //Der Button ist eh  nur sichtbar wenn ein Cocktail vorhanden ist deswegen kann ich hier ohne Bedenken unwrappen
+                        printerVm.printCocktail(vm.cocktail!)
                     }){
                         HStack{
                             Image(systemName: "printer.fill")
@@ -65,7 +67,7 @@ struct CocktailView: View {
             Spacer()
         }
         .padding()
-        .sheet(isPresented: $vm.sheetIsPresent){
+        .sheet(isPresented: $printerVm.sheetIsPresent){
             BTDeviceChoiceView()
         }
         .onAppear{

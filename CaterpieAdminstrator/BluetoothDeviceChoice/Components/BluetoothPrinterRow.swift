@@ -88,8 +88,8 @@ struct BlueToothPrinterRowView: View {
                             .foregroundStyle(cm.txtImportant)
                     }
                 }.onTapGesture {
-                    CocktailViewViewModel.shared.printer = printer
-                    CocktailViewViewModel.shared.sheetIsPresent = false
+                    BTPrinterViewModel.shared.printer = printer
+                    BTPrinterViewModel.shared.sheetIsPresent = false
                 }
             }
         }

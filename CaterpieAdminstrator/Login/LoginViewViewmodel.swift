@@ -11,11 +11,14 @@ import Foundation
 class LoginViewViewmodel: ObservableObject{
     
     @Published var authorized = false
-    
+
     func checkScan(_ input: String){
-        if input.contains(Secrets.loginKey.getValue()){
-            //Der ausgelesene String enthält das Passwort und den Namen
-            FirebaseRepository.shared.userName = input.replacingOccurrences(of: Secrets.loginKey.getValue(), with: "")
+        
+        let splits = input.split(separator: ", ")
+        if splits[0] == Secrets.loginKey.getValue(){
+            FirebaseRepository.shared.userName = splits[1].replacingOccurrences(of: "name: ", with: "")
+            ColorManager.shared.backgroundURL = splits[2].replacingOccurrences(of: "wp: ", with: "")
+            ColorManager.shared.primary = ColorManager.shared.getColor(splits[3].replacingOccurrences(of: "primary: ", with: ""))
             authorized = true
         }
     }

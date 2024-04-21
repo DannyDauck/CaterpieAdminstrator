@@ -14,4 +14,9 @@ struct Product: Codable{
     var plu: Int
     var articleDependencies: [ArticleDependency]
     var tags: [String]
+    var flavours: [Product] = []
+    var price: String
+    var category: String
+    
+    
 }

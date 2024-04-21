@@ -55,9 +55,11 @@ struct LoginView: View {
             Spacer()
         }.background(
             ZStack{
-                Image(.zero)
-                    .resizable()
-                    .scaledToFill()
+                
+                 Image(.zero)
+                 .resizable()
+                 .scaledToFill()
+                 
                 Color.white.opacity(0.4)
             }.background(.white.opacity(0.4))
         )

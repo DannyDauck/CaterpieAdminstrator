@@ -15,6 +15,7 @@ class FirebaseRepository{
     var auth = FirebaseAuth.Auth.auth()
     var store = Firestore.firestore()
     var userName = ""
+    var authorized = false
     
     private init(){}
     
@@ -39,6 +40,16 @@ class FirebaseRepository{
         }
     }
     
+    func writeProductToFirebase(_ product: Product){
+        do{
+            try store.collection("exampleProducts").document(product.name).setData(from: product)
+        }catch{
+            print("Could not write product to data base")
+        }
+    }
+    
+    
+    
     func fetchArticles(completion: @escaping ([Article]) -> Void) {
         var articles: [Article] = []
         
@@ -59,6 +70,28 @@ class FirebaseRepository{
             }
             
             completion(articles)
+        }
+    }
+    
+    func fetchProducts(completion: @escaping ([Product]) -> Void) {
+        var products: [Product] = []
+        
+        store.collection("exampleProduct").getDocuments { querySnapshot, error in
+            guard let documents = querySnapshot?.documents else {
+                print("Error fetching documents: \(error)")
+                completion([])
+                return
+            }
+            
+            for document in documents {
+                do {
+                    let product = try document.data(as: Product.self)
+                    products.append(product)
+                } catch {
+                    print("Error decoding article: \(error)")
+                }
+            }
+            completion(products)
         }
     }
 }

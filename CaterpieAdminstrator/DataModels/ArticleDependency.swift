@@ -11,7 +11,7 @@ import Foundation
 struct ArticleDependency: Codable{
     
     var unit: String
-    var count: Float
+    var count: String
     var ean: String
     
 }

@@ -7,8 +7,10 @@
 
 import SwiftUI
 
+
 struct MainScreenView: View {
     
+    @StateObject var vm: LoginViewViewmodel
     
     var body: some View {
         NavigationView {
@@ -22,7 +24,7 @@ struct MainScreenView: View {
                         .padding(.vertical, 5)
                         .foregroundColor(.white)
                         .frame(width: 300)
-                        .background(Capsule().foregroundColor(.black))
+                        .background(Capsule().foregroundColor(ColorManager.shared.primary))
                         .padding(5)
                         .background(Capsule().foregroundStyle(LinearGradient(colors: [.gray, .yellow], startPoint: .bottomLeading, endPoint: .topTrailing)))
                 }
@@ -53,18 +55,51 @@ struct MainScreenView: View {
                         .padding(.vertical, 5)
                         .foregroundColor(.white)
                         .frame(width: 300)
-                        .background(Capsule().foregroundColor(.black))
+                        .background(Capsule().foregroundColor(ColorManager.shared.primary))
                         .padding(5)
                         .background(Capsule().foregroundStyle(LinearGradient(colors: [.gray, .yellow], startPoint: .bottomLeading, endPoint: .topTrailing)))
                 }
                 Spacer()
+                HStack{
+                    Spacer()
+                    Button(action: {
+                        vm.authorized = false
+                    }){
+                        ZStack{
+                            Image(systemName: "rectangle.portrait.and.arrow.right")
+                                .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                                .fontWeight(.bold)
+                                .foregroundColor(.gray)
+                                .padding([.top,.leading], 8)
+                            Image(systemName: "rectangle.portrait.and.arrow.right")
+                                .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                                .fontWeight(.bold)
+                                .foregroundColor(.white)
+                        }.padding(6)
+                            .background(Circle().foregroundStyle(ColorManager.shared.primary))
+                            .padding(4)
+                            .background(Circle().foregroundStyle(LinearGradient(colors: [.gray, .yellow], startPoint: .bottomLeading, endPoint: .topTrailing)))
+                            .padding()
+                    }
+                        
+                }
             }
             .navigationTitle("Willkommen \(FirebaseRepository.shared.userName)!")
             .background(
                 ZStack{
-                    Image(.zero)
+                   /* Image(.zero)
                         .resizable()
                         .scaledToFill()
+                    */
+                    AsyncImage(url: URL(string: ColorManager.shared.backgroundURL), content: ({image in
+                        image
+                            .resizable()
+                            .scaledToFill()
+                    }), placeholder: {
+                        Image(.zero)
+                            .resizable()
+                            .scaledToFill()
+                    })
                     Color.white.opacity(0.4)
                 }.background(.white.opacity(0.4))
             )
@@ -82,5 +117,5 @@ struct MainScreenView: View {
 }
 
 #Preview {
-    MainScreenView()
+    MainScreenView(vm: LoginViewViewmodel())
 }

@@ -9,6 +9,9 @@ import Foundation
 
 struct Article: Codable{
     
+    
+    
+    
     var ean: String
     var name: String
     var manufactorer: String
