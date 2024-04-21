@@ -16,7 +16,7 @@ class AudioManager{
     }
     
     
-    func play(_ sound: Sound){
+    func play(_ sound: Sound, volume: Float = 1.0){
         guard let soundURL = Bundle.main.url(forResource: sound.rawValue, withExtension: "wav") else { return }
         var soundID: SystemSoundID = 0
         AudioServicesCreateSystemSoundID(soundURL as CFURL, &soundID)

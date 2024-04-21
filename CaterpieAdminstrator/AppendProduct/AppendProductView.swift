@@ -69,7 +69,7 @@ struct AppendProductView: View {
                     .padding(.leading)
                     .background(.gray.opacity(0.8))
                     .padding(.trailing)
-                    .keyboardType(.numberPad)
+                    .keyboardType(.numbersAndPunctuation)
             }
             HStack{
                 Text("Zutaten")
@@ -149,14 +149,15 @@ struct AppendProductView: View {
                     .padding(.leading)
                 Button(action:{
                     vm.tags.append(vm.currentTag)
+                    vm.currentTag = ""
                 }){
                     Text("hinzufügen")
                 }.buttonStyle(.borderedProminent)
             }
             ScrollView{
-                ForEach(vm.tags, id: \.self){
-                    Text($0)
-                }
+                    ForEach(vm.tags, id: \.self){
+                        Text($0)
+                    }
             }.frame(height: 200)
             Spacer()
         }.onAppear{

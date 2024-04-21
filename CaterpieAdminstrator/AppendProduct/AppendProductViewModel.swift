@@ -33,6 +33,8 @@ class AppendProductViewModel: ObservableObject{
         repo.writeProductToFirebase(
             Product(name: name, plu: pluNumber, articleDependencies: articles, tags: tags, price: price, category: category)
         )
+        
+        
     }
     
     

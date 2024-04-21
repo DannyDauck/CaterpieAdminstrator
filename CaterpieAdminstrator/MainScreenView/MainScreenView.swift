@@ -65,6 +65,16 @@ struct MainScreenView: View {
                         .padding(5)
                         .background(Capsule().foregroundStyle(LinearGradient(colors: [.gray, .yellow], startPoint: .bottomLeading, endPoint: .topTrailing)))
                 }
+                NavigationLink(destination: ExcampleTableView()){
+                    Text("Beispiel Tisch")
+                        .font(.title)
+                        .padding(.vertical, 5)
+                        .foregroundColor(.white)
+                        .frame(width: 300)
+                        .background(Capsule().foregroundColor(.gray.opacity(0.2)))
+                        .padding(5)
+                        .background(Capsule().foregroundStyle(LinearGradient(colors: [.gray, .yellow], startPoint: .bottomLeading, endPoint: .topTrailing)))
+                }
                 Spacer()
                 HStack{
                     Spacer()

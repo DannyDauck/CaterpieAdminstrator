@@ -76,7 +76,7 @@ class FirebaseRepository{
     func fetchProducts(completion: @escaping ([Product]) -> Void) {
         var products: [Product] = []
         
-        store.collection("exampleProduct").getDocuments { querySnapshot, error in
+        store.collection("exampleProducts").getDocuments { querySnapshot, error in
             guard let documents = querySnapshot?.documents else {
                 print("Error fetching documents: \(error)")
                 completion([])

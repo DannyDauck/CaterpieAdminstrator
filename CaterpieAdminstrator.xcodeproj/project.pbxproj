@@ -57,6 +57,15 @@
 		D58FE11F2BD4032100E93182 /* ColorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58FE11E2BD4032100E93182 /* ColorManager.swift */; };
 		D58FE1222BD403B400E93182 /* BluetoothPrinterRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58FE1212BD403B400E93182 /* BluetoothPrinterRow.swift */; };
 		D58FE1242BD44C6F00E93182 /* BTPrinterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58FE1232BD44C6F00E93182 /* BTPrinterViewModel.swift */; };
+		D58FE1272BD5623200E93182 /* ExcampleTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58FE1262BD5623200E93182 /* ExcampleTableView.swift */; };
+		D58FE12A2BD5628E00E93182 /* OrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58FE1292BD5628E00E93182 /* OrderView.swift */; };
+		D58FE12C2BD5635200E93182 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58FE12B2BD5635200E93182 /* SearchView.swift */; };
+		D58FE12E2BD563CD00E93182 /* TableOverviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58FE12D2BD563CD00E93182 /* TableOverviewView.swift */; };
+		D58FE1332BD5691D00E93182 /* ExcampleTableViewViewmodel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58FE1322BD5691D00E93182 /* ExcampleTableViewViewmodel.swift */; };
+		D58FE1362BD5717700E93182 /* ProductChip.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58FE1352BD5717700E93182 /* ProductChip.swift */; };
+		D58FE1392BD591B400E93182 /* Keypad.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58FE1382BD591B400E93182 /* Keypad.swift */; };
+		D58FE13D2BD5950300E93182 /* clear_trash.wav in Resources */ = {isa = PBXBuildFile; fileRef = D58FE13B2BD5950300E93182 /* clear_trash.wav */; };
+		D58FE13E2BD5950300E93182 /* button_click.wav in Resources */ = {isa = PBXBuildFile; fileRef = D58FE13C2BD5950300E93182 /* button_click.wav */; };
 		D5FC868F2BCC756F005EB0D9 /* ApiRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FC868E2BCC756F005EB0D9 /* ApiRepository.swift */; };
 		D5FC86912BCC7E2A005EB0D9 /* Cocktail.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FC86902BCC7E2A005EB0D9 /* Cocktail.swift */; };
 		D5FC86942BCC7EAA005EB0D9 /* CocktailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FC86932BCC7EAA005EB0D9 /* CocktailView.swift */; };
@@ -94,6 +103,15 @@
 		D58FE11E2BD4032100E93182 /* ColorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorManager.swift; sourceTree = "<group>"; };
 		D58FE1212BD403B400E93182 /* BluetoothPrinterRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothPrinterRow.swift; sourceTree = "<group>"; };
 		D58FE1232BD44C6F00E93182 /* BTPrinterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BTPrinterViewModel.swift; sourceTree = "<group>"; };
+		D58FE1262BD5623200E93182 /* ExcampleTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExcampleTableView.swift; sourceTree = "<group>"; };
+		D58FE1292BD5628E00E93182 /* OrderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderView.swift; sourceTree = "<group>"; };
+		D58FE12B2BD5635200E93182 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		D58FE12D2BD563CD00E93182 /* TableOverviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableOverviewView.swift; sourceTree = "<group>"; };
+		D58FE1322BD5691D00E93182 /* ExcampleTableViewViewmodel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExcampleTableViewViewmodel.swift; sourceTree = "<group>"; };
+		D58FE1352BD5717700E93182 /* ProductChip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductChip.swift; sourceTree = "<group>"; };
+		D58FE1382BD591B400E93182 /* Keypad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keypad.swift; sourceTree = "<group>"; };
+		D58FE13B2BD5950300E93182 /* clear_trash.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = clear_trash.wav; sourceTree = "<group>"; };
+		D58FE13C2BD5950300E93182 /* button_click.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = button_click.wav; sourceTree = "<group>"; };
 		D5FC868E2BCC756F005EB0D9 /* ApiRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRepository.swift; sourceTree = "<group>"; };
 		D5FC86902BCC7E2A005EB0D9 /* Cocktail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cocktail.swift; sourceTree = "<group>"; };
 		D5FC86932BCC7EAA005EB0D9 /* CocktailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailView.swift; sourceTree = "<group>"; };
@@ -152,6 +170,8 @@
 		D5199CD82BB1F9A6001B3967 /* CaterpieAdminstrator */ = {
 			isa = PBXGroup;
 			children = (
+				D58FE13A2BD5950300E93182 /* audioSRC */,
+				D58FE1252BD5621500E93182 /* ExcampleTable */,
 				D58FE1152BD401A500E93182 /* BluetoothDeviceChoice */,
 				D58FE1102BD400B300E93182 /* Tools */,
 				D58FE1032BD3E58400E93182 /* Login */,
@@ -292,6 +312,77 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
+		D58FE1252BD5621500E93182 /* ExcampleTable */ = {
+			isa = PBXGroup;
+			children = (
+				D58FE1282BD5627100E93182 /* Components */,
+				D58FE1262BD5623200E93182 /* ExcampleTableView.swift */,
+				D58FE1322BD5691D00E93182 /* ExcampleTableViewViewmodel.swift */,
+			);
+			path = ExcampleTable;
+			sourceTree = "<group>";
+		};
+		D58FE1282BD5627100E93182 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				D58FE1312BD5687400E93182 /* TableOrderView */,
+				D58FE1302BD5686600E93182 /* SearchView */,
+				D58FE12F2BD5684F00E93182 /* OrderView */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		D58FE12F2BD5684F00E93182 /* OrderView */ = {
+			isa = PBXGroup;
+			children = (
+				D58FE1372BD5919700E93182 /* Components */,
+				D58FE1292BD5628E00E93182 /* OrderView.swift */,
+			);
+			path = OrderView;
+			sourceTree = "<group>";
+		};
+		D58FE1302BD5686600E93182 /* SearchView */ = {
+			isa = PBXGroup;
+			children = (
+				D58FE1342BD5714F00E93182 /* Components */,
+				D58FE12B2BD5635200E93182 /* SearchView.swift */,
+			);
+			path = SearchView;
+			sourceTree = "<group>";
+		};
+		D58FE1312BD5687400E93182 /* TableOrderView */ = {
+			isa = PBXGroup;
+			children = (
+				D58FE12D2BD563CD00E93182 /* TableOverviewView.swift */,
+			);
+			path = TableOrderView;
+			sourceTree = "<group>";
+		};
+		D58FE1342BD5714F00E93182 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				D58FE1352BD5717700E93182 /* ProductChip.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		D58FE1372BD5919700E93182 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				D58FE1382BD591B400E93182 /* Keypad.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		D58FE13A2BD5950300E93182 /* audioSRC */ = {
+			isa = PBXGroup;
+			children = (
+				D58FE13B2BD5950300E93182 /* clear_trash.wav */,
+				D58FE13C2BD5950300E93182 /* button_click.wav */,
+			);
+			path = audioSRC;
+			sourceTree = "<group>";
+		};
 		D5FC86922BCC7E88005EB0D9 /* CocktailView */ = {
 			isa = PBXGroup;
 			children = (
@@ -386,9 +477,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D58FE13E2BD5950300E93182 /* button_click.wav in Resources */,
 				D5199CE12BB1F9A7001B3967 /* Preview Assets.xcassets in Resources */,
 				D5199CDE2BB1F9A7001B3967 /* Assets.xcassets in Resources */,
 				D5199D002BB2E5E7001B3967 /* GoogleService-Info.plist in Resources */,
+				D58FE13D2BD5950300E93182 /* clear_trash.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -401,13 +494,16 @@
 			files = (
 				D5FC86962BCC813E005EB0D9 /* CocktailViewViewModel.swift in Sources */,
 				D50883302BCFC766009D1E45 /* Secrets.swift in Sources */,
+				D58FE1272BD5623200E93182 /* ExcampleTableView.swift in Sources */,
 				D58FE1222BD403B400E93182 /* BluetoothPrinterRow.swift in Sources */,
 				D5199D432BB2F9C4001B3967 /* ArticleOverviewViewmodel.swift in Sources */,
+				D58FE1392BD591B400E93182 /* Keypad.swift in Sources */,
 				D5199CFE2BB2D528001B3967 /* UnitDependency.swift in Sources */,
 				D5199CEC2BB1FD24001B3967 /* ScannerView.swift in Sources */,
 				D5199CE92BB1F9CA001B3967 /* MainScreenView.swift in Sources */,
 				D58FE11F2BD4032100E93182 /* ColorManager.swift in Sources */,
 				D58FE1022BD3C50D00E93182 /* ArticleDependency.swift in Sources */,
+				D58FE1332BD5691D00E93182 /* ExcampleTableViewViewmodel.swift in Sources */,
 				D5199CF82BB21A39001B3967 /* Units.swift in Sources */,
 				D5199CFA2BB2A557001B3967 /* Article.swift in Sources */,
 				D58FE0FE2BD3C3C000E93182 /* AppendProductView.swift in Sources */,
@@ -417,17 +513,21 @@
 				D58FE10B2BD3F26A00E93182 /* LoginViewViewmodel.swift in Sources */,
 				D58FE1242BD44C6F00E93182 /* BTPrinterViewModel.swift in Sources */,
 				D5199D362BB2ECC2001B3967 /* FirebaseRepository.swift in Sources */,
+				D58FE12E2BD563CD00E93182 /* TableOverviewView.swift in Sources */,
 				D58FE1002BD3C46200E93182 /* Product.swift in Sources */,
 				D5FC86942BCC7EAA005EB0D9 /* CocktailView.swift in Sources */,
 				D5199CF22BB215ED001B3967 /* NewArticleView.swift in Sources */,
+				D58FE1362BD5717700E93182 /* ProductChip.swift in Sources */,
 				D5FC868F2BCC756F005EB0D9 /* ApiRepository.swift in Sources */,
 				D5199D412BB2F9A7001B3967 /* ArticleOverview.swift in Sources */,
 				D58FE1142BD4013600E93182 /* BluetoothPrinter.swift in Sources */,
 				D5199CDA2BB1F9A6001B3967 /* CaterpieAdminstratorApp.swift in Sources */,
 				D58FE1072BD3E5BD00E93182 /* LoginView.swift in Sources */,
 				D58FE10D2BD3F7A400E93182 /* AppendProductViewModel.swift in Sources */,
+				D58FE12C2BD5635200E93182 /* SearchView.swift in Sources */,
 				D5199CF42BB216DE001B3967 /* NewArticleViewViewmodel.swift in Sources */,
 				D58FE1192BD401EA00E93182 /* BluetoothDeviceChoice.swift in Sources */,
+				D58FE12A2BD5628E00E93182 /* OrderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

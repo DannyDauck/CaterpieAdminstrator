@@ -15,7 +15,7 @@ class LoginViewViewmodel: ObservableObject{
     func checkScan(_ input: String){
         
         let splits = input.split(separator: ", ")
-        if splits[0] == Secrets.loginKey.getValue(){
+        if splits[0] == Secrets.loginKey.getValue() && splits.count == 3{
             FirebaseRepository.shared.userName = splits[1].replacingOccurrences(of: "name: ", with: "")
             ColorManager.shared.backgroundURL = splits[2].replacingOccurrences(of: "wp: ", with: "")
             ColorManager.shared.primary = ColorManager.shared.getColor(splits[3].replacingOccurrences(of: "primary: ", with: ""))
