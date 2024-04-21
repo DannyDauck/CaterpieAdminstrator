@@ -17,64 +17,84 @@ struct ScannerView: View {
     @State private var capturedImage: UIImage?
     
     var body: some View {
-        VStack {
-            if capturedImage != nil {
-                Text("Scanned EAN Code: \(scannedEANCode)")
+        ZStack{
+            VStack{
+                ZStack{
+                    AsyncImage(url: URL(string: ColorManager.shared.backgroundURL), content: ({image in
+                        image
+                            .resizable()
+                            .scaledToFill()
+                    }), placeholder: {
+                        Image(.zero)
+                            .resizable()
+                            .scaledToFill()
+                            .ignoresSafeArea(.all)
+                    })
+                    Color.white.opacity(0.4)
+                }
             }
-            Button(action: {
-                isImagePickerPresented.toggle()
+            VStack {
+                if capturedImage != nil {
+                    Text("Scanned EAN Code: \(scannedEANCode)")
+                }
+                Button(action: {
+                    isImagePickerPresented.toggle()
+                }) {
+                    Text("Kamera benutzen")
+                        .font(.title)
+                        .padding(.vertical, 5)
+                        .foregroundColor(.black)
+                        .frame(width: 300)
+                        .background(Capsule().foregroundColor(.white))
+                        .padding(5)
+                        .background(Capsule().foregroundStyle(LinearGradient(colors: [.yellow, .gray], startPoint: .bottomLeading, endPoint: .topTrailing)))
+                }
+                .padding()
+                Button(action: {
+                    txtFieldIsVisible.toggle()
+                }) {
+                    Text("Manuelle Eingabe")
+                        .font(.title)
+                        .padding(.vertical, 5)
+                        .foregroundColor(.black)
+                        .frame(width: 300)
+                        .background(Capsule().foregroundColor(.white))
+                        .padding(5)
+                        .background(Capsule().foregroundStyle(LinearGradient(colors: [.gray, .yellow], startPoint: .bottomLeading, endPoint: .topTrailing)))
+                }
+                .padding()
+                if txtFieldIsVisible{
+                    TextField("EAN", text: $scannedEANCode)
+                        .frame(width: 200)
+                        .padding(5)
+                        .background(.black)
+                }
+                if !scannedEANCode.isEmpty{
+                    NavigationLink(destination: NewArticleView(vm: NewArticleViewViewmodel(ean: scannedEANCode))){
+                        Text("Artikel anlegen")
+                            .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                            .font(.title)
+                            .padding(.vertical, 5)
+                            .foregroundColor(.white)
+                            .frame(width: 300)
+                            .background(Capsule().foregroundColor(ColorManager.shared.primary))
+                            .padding(5)
+                            .background(Capsule().foregroundStyle(LinearGradient(colors: [.gray, .yellow], startPoint: .bottomLeading, endPoint: .topTrailing)))
+                    }
+                }
+                
+            }
+            .sheet(isPresented: $isImagePickerPresented, onDismiss: {
+                isCameraAuthorized = false
+                if let capturedImage = capturedImage {
+                    scannedEANCode = readEANCode(from: capturedImage)
+                }
             }) {
-                Text("Kamera benutzen")
-                    .font(.title)
-                    .padding(.vertical, 5)
-                    .foregroundColor(.black)
-                    .frame(width: 300)
-                    .background(Capsule().foregroundColor(.white))
-                    .padding(5)
-                    .background(Capsule().foregroundStyle(LinearGradient(colors: [.yellow, .gray], startPoint: .bottomLeading, endPoint: .topTrailing)))
+                ImagePicker(capturedImage: $capturedImage)
             }
-            .padding()
-            Button(action: {
-                txtFieldIsVisible.toggle()
-            }) {
-                Text("Manuelle Eingabe")
-                    .font(.title)
-                    .padding(.vertical, 5)
-                    .foregroundColor(.black)
-                    .frame(width: 300)
-                    .background(Capsule().foregroundColor(.white))
-                    .padding(5)
-                    .background(Capsule().foregroundStyle(LinearGradient(colors: [.gray, .yellow], startPoint: .bottomLeading, endPoint: .topTrailing)))
-            }
-            .padding()
-            if txtFieldIsVisible{
-                TextField("EAN", text: $scannedEANCode)
-                    .frame(width: 200)
-                    .padding(5)
-                    .background(.gray.opacity(0.4))
-            }
+            
         }
-        .sheet(isPresented: $isImagePickerPresented, onDismiss: {
-            isCameraAuthorized = false
-            if let capturedImage = capturedImage {
-                scannedEANCode = readEANCode(from: capturedImage)
-            }
-        }) {
-            ImagePicker(capturedImage: $capturedImage)
-        }
-        if !scannedEANCode.isEmpty{
-            NavigationLink(destination: NewArticleView(vm: NewArticleViewViewmodel(ean: scannedEANCode))){
-                Text("Artikel anlegen")
-                    .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
-                    .font(.title)
-                    .padding(.vertical, 5)
-                    .foregroundColor(.white)
-                    .frame(width: 300)
-                    .background(Capsule().foregroundColor(.black))
-                    .padding(5)
-                    .background(Capsule().foregroundStyle(LinearGradient(colors: [.gray, .yellow], startPoint: .bottomLeading, endPoint: .topTrailing)))
-            }
-        }
+        
     }
     
     func readEANCode(from image: UIImage) -> String {

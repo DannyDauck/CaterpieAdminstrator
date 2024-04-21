@@ -94,7 +94,7 @@ struct LoginView: View {
                         returnValue = payload
                     }
                     
-                    print("Barcode detected: \(payload)")
+                    print("Barcode detected: \(payload)".replacingOccurrences(of: Secrets.loginKey.getValue(), with: "*******************"))
                     
                 }
             }

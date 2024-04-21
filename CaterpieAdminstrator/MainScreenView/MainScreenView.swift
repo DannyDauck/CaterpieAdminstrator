@@ -15,7 +15,13 @@ struct MainScreenView: View {
     var body: some View {
         NavigationView {
             VStack{
-                
+                HStack{
+                    Text("Willkommen \(FirebaseRepository.shared.userName)")
+                        .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                        .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                        .padding(.leading)
+                    Spacer()
+                }
                 Spacer()
                 
                 NavigationLink(destination: ScannerView() ){
@@ -38,7 +44,7 @@ struct MainScreenView: View {
                         .padding(5)
                         .background(Capsule().foregroundStyle(LinearGradient(colors: [.gray, .yellow], startPoint: .bottomLeading, endPoint: .topTrailing)))
                 }
-                Button(action:  {}) {
+                NavigationLink(destination: AppendProductView()){
                     Text("Append product")
                         .font(.title)
                         .padding(.vertical, 5)
@@ -84,7 +90,7 @@ struct MainScreenView: View {
                         
                 }
             }
-            .navigationTitle("Willkommen \(FirebaseRepository.shared.userName)!")
+            .navigationTitle("MainScreen")
             .background(
                 ZStack{
                    /* Image(.zero)

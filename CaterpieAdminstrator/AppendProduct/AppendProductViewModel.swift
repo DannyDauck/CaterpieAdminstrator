@@ -65,4 +65,13 @@ class AppendProductViewModel: ObservableObject{
         
         return nameOut
     }
+    
+    func getArticleNameByEAN(_ ean: String) -> String{
+        guard let name = fbArticles.filter({
+            $0.ean == ean
+        }).first?.name else{
+            return "n.a."
+        }
+        return name
+    }
 }
