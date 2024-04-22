@@ -76,27 +76,40 @@ struct OrderView: View {
                         Spacer()
                     }
                     ScrollView{
-                        ForEach(vm.currentTable?.orders ?? [], id: \.name){
-                            OrderRow(order: $0)
+                        ForEach(vm.currentTable?.orders ?? [], id: \.name){order in
+                            OrderRow(order: order)
+                                .onLongPressGesture{
+                                    if vm.stornoIsActive{
+                                        vm.stornoArray.append(order)
+                                    }
+                                }
                         }
                     }.frame(maxHeight: .infinity)
                 }
                 VStack{
                     HStack{
                         Spacer()
-                        Text("Aktuelle Bestellung")
+                        Text(vm.stornoIsActive ? "Stornomodus" : "Aktuelle Bestellung")
                             .font(.title2)
                             .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
                         Spacer()
                     }
-                    if vm.lastOrder != nil{
-                        OrderRow(order: vm.lastOrder!, isLastOrder: true)
-                    }
-                    ScrollView{
-                        ForEach(vm.currentOrder, id: \.name){
-                            OrderRow(order: $0)
+                    if !vm.stornoIsActive{
+                        if vm.lastOrder != nil{
+                            OrderRow(order: vm.lastOrder!, isLastOrder: true)
                         }
-                    }.frame(maxHeight: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
+                        ScrollView{
+                            ForEach(vm.currentOrder, id: \.name){
+                                OrderRow(order: $0)
+                            }
+                        }.frame(maxHeight: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
+                    }else{
+                        ScrollView{
+                            ForEach(vm.stornoArray, id: \.name){
+                                OrderRow(order: $0)
+                            }
+                        }.frame(maxHeight: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
+                    }
                 }
             }
             Spacer()

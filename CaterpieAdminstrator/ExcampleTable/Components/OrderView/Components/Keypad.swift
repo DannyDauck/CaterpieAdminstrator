@@ -18,16 +18,27 @@ struct Keypad: View {
             HStack(spacing: 0){
                 Button(action: {
                     //Storn implementieren
+                    if vm.stornoIsActive{
+                        //Stornomethode
+                        vm.storno()
+                    }else{
+                        if vm.currentTable != nil{
+                            vm.stornoIsActive = true
+                        }
+                    }
                 }){
                     Text("Storno")
                         .frame(width: 80, height: 60)
-                        .background(.red.opacity(0.9))
-                        .foregroundStyle(.black)
+                        .background(vm.stornoIsActive ? ColorManager.shared.exceptionGradient : LinearGradient(colors: [.red.opacity(0.9)], startPoint: .leading, endPoint: .trailing))
+                        .foregroundStyle(vm.stornoIsActive ? .green : .black)
+                        .padding(vm.stornoIsActive ? 2 : 0)
+                        .background(.green)
                         
                 }
                 Button(action: {
                     //Storn implementieren
                     vm.instantCancellation()
+                    am.play(.trash)
                 }){
                     Text("Sofort\nStorno")
                         .frame(width: 80, height: 60)
@@ -211,11 +222,18 @@ struct Keypad: View {
                 }
                 VStack(spacing: 0){
                     Button(action: {
-                        //Tischmethode in vm implementieren
+                        //Tischbutton
                         if vm.currentTable == nil{
                             vm.setTable()
                         }else{
-                            vm.matchOrder()
+                            if !vm.stornoIsActive{
+                                if !vm.currentOrder.isEmpty{
+                                    vm.matchOrder()
+                                }
+                                vm.setTable()
+                            }else{
+                                vm.storno()
+                            }
                         }
                     }){
                         Text("Tisch")
@@ -227,14 +245,13 @@ struct Keypad: View {
                             .background(cm.primary)
                     }
                     Button(action: {
-                        //OK in vm implementieren
-                        if vm.currentTable == nil{
-                            vm.setTable()
-                        }else{
-                            if !vm.currentOrder.isEmpty{
-                                vm.matchOrder()
+                        //OK-Button
+                        if !vm.stornoIsActive{
+                            if vm.currentTable == nil{
+                                vm.setTable()
+                            }else{
+                                vm.getOrder()
                             }
-                            vm.setTable()
                         }
                     }){
                         Text("OK")

@@ -24,6 +24,8 @@ class ExcampleTableViewViewmodel: ObservableObject{
     @Published var inputString = ""
     @Published var currentProduct: Product? = nil
     @Published var infoIsPresent = false
+    @Published var stornoIsActive = false
+    @Published var stornoArray: [Order] = []
     
     @Published var tables: [Table] = []
     @Published var currentTable: Table? = nil
@@ -126,6 +128,40 @@ class ExcampleTableViewViewmodel: ObservableObject{
         }
     }
     
+    func getIngredientsFromProduct() -> String {
+        guard let product = currentProduct else{
+            return ""
+        }
+        
+        var articleList: [Article] = []
+        
+        for dependency in product.articleDependencies {
+            if let article = articles.first(where: {
+                $0.ean == dependency.ean
+            }){
+                articleList.append(article)
+            }else{
+                //ansonsten mach einfach nichts
+            }
+        }
+        
+        var productIngredients: Set<String> = Set()
+        for article in articleList {
+            for ingredient in article.ingredients {
+                productIngredients.insert(ingredient)
+            }
+        }
+        var returnString = ""
+        
+        for ingredient in productIngredients {
+            returnString.append(ingredient)
+            returnString.append(", ")
+        }
+        returnString.dropLast()
+        returnString.dropLast()
+        return returnString
+    }
+    
     func getOrder(){
         if inputString.contains("*"){
             let parts = inputString.split(separator: "*")
@@ -209,17 +245,50 @@ class ExcampleTableViewViewmodel: ObservableObject{
         }
     }
     func instantCancellation(){
+        guard let order = lastOrder else{
+            return
+        }
+        
         var newOrder = currentOrder.first(where: {
-            $0.name == lastOrder!.name
+            $0.name == order.name
         })
         //Ich kann ohne Probleme unwrappen da newOrder existieren muss
-        newOrder!.count = newOrder!.count - lastOrder!.count
+        newOrder!.count = newOrder!.count - order.count
         
         currentOrder.removeAll(where: {
             $0.name == newOrder?.name
         })
-        currentOrder.append(newOrder!)
+        if newOrder?.count != 0 {
+            currentOrder.append(newOrder!)
+        }
+        
         lastOrder = nil
+    }
+    
+    func storno(){
+        if !stornoArray.isEmpty{
+            if currentTable != nil{
+                for order in stornoArray{
+                    currentTable!.orders.removeAll(where: {
+                        $0.name == order.name
+                    })
+                }
+            }else{
+                stornoIsActive = false
+                return
+            }
+        }else{
+            stornoIsActive = false
+            return
+        }
+        tables.removeAll(where: {
+            $0.number == currentTable?.number
+        })
+        tables.append(currentTable!)
+        repo.writeTableToFirebase(currentTable!)
+        currentTable = nil
+        stornoArray = []
+        stornoIsActive = false
     }
     
     func matchOrder(){

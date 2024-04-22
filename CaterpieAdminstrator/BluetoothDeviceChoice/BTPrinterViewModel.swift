@@ -83,7 +83,11 @@ class BTPrinterViewModel: ObservableObject{
         pt.largeText(table, .left, .bold)
         pt.text("\n\n")
         for order in orders{
-            pt.largeText("\(order.count) \(order.name)\n", .left, .normal)
+            var newName = order.name
+            newName = newName.replacingOccurrences(of: "ö", with: "oe")
+            newName = newName.replacingOccurrences(of: "ä", with: "ae")
+            newName = newName.replacingOccurrences(of: "ü", with: "ue")
+            pt.largeText("\(order.count) \(newName)\n", .left, .normal)
         }
         pt.text("\n\n\n")
         pt.text("\n")
