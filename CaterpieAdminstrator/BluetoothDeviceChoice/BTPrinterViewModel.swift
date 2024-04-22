@@ -72,7 +72,7 @@ class BTPrinterViewModel: ObservableObject{
         return newString
     }
     
-    func printOrder(_ table: String, _ orders: [Order]){
+    func printOrder(_ table: String, _ orders: [Order], _ isStorno: Bool = false){
         
         guard let pt = printer else {
             sheetIsPresent = true
@@ -82,6 +82,9 @@ class BTPrinterViewModel: ObservableObject{
         
         pt.largeText(table, .left, .bold)
         pt.text("\n\n")
+        if isStorno{
+            pt.largeText("**** STORNO ****\n", .center)
+        }
         for order in orders{
             var newName = order.name
             newName = newName.replacingOccurrences(of: "ö", with: "oe")
@@ -89,7 +92,10 @@ class BTPrinterViewModel: ObservableObject{
             newName = newName.replacingOccurrences(of: "ü", with: "ue")
             pt.largeText("\(order.count) \(newName)\n", .left, .normal)
         }
-        pt.text("\n\n\n")
+        if isStorno{
+            pt.largeText("**** STORNO ****\n", .center)
+        }
+        pt.text("\n\n\n", .left)
         pt.text("\n")
     }
 }

@@ -103,6 +103,7 @@ struct ProductInfoView: View {
                 }.background(.black.opacity(0.8))
                 HStack{
                     Text(vm.getIngredientsFromProduct())
+                        .padding([.trailing, .leading])
                     Spacer()
                 }
                 

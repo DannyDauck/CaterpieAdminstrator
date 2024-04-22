@@ -286,6 +286,7 @@ class ExcampleTableViewViewmodel: ObservableObject{
         })
         tables.append(currentTable!)
         repo.writeTableToFirebase(currentTable!)
+        BTPrinterViewModel.shared.printOrder(currentTable!.number, stornoArray, true)
         currentTable = nil
         stornoArray = []
         stornoIsActive = false
