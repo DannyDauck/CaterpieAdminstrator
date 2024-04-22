@@ -27,6 +27,7 @@ struct Keypad: View {
                 }
                 Button(action: {
                     //Storn implementieren
+                    vm.instantCancellation()
                 }){
                     Text("Sofort\nStorno")
                         .frame(width: 80, height: 60)
@@ -171,7 +172,9 @@ struct Keypad: View {
                     }
                     HStack(spacing: 0){
                         Button(action: {
-                            vm.inputString.append(".")
+                            if !vm.inputString.contains("."){
+                                vm.inputString.append(".")
+                            }
                             am.play(.click)
                         }){
                             Text(".")
@@ -192,7 +195,9 @@ struct Keypad: View {
                             .background(cm.btnBgInactive)
                         
                         Button(action: {
-                            vm.inputString.append("*")
+                            if vm.currentTable != nil{
+                                vm.inputString.append("*")
+                            }
                             am.play(.click)
                         }){
                             Text("*")
@@ -207,6 +212,11 @@ struct Keypad: View {
                 VStack(spacing: 0){
                     Button(action: {
                         //Tischmethode in vm implementieren
+                        if vm.currentTable == nil{
+                            vm.setTable()
+                        }else{
+                            vm.matchOrder()
+                        }
                     }){
                         Text("Tisch")
                             .frame(height: 78)
@@ -218,6 +228,14 @@ struct Keypad: View {
                     }
                     Button(action: {
                         //OK in vm implementieren
+                        if vm.currentTable == nil{
+                            vm.setTable()
+                        }else{
+                            if !vm.currentOrder.isEmpty{
+                                vm.matchOrder()
+                            }
+                            vm.setTable()
+                        }
                     }){
                         Text("OK")
                             .frame(height: 78)
@@ -229,7 +247,7 @@ struct Keypad: View {
                     }
                 }
             }
-        }.frame(height: 250)
+        }.frame(height: 240)
     }
 }
 

@@ -48,6 +48,22 @@ class FirebaseRepository{
         }
     }
     
+    func writeTableToFirebase(_ table: Table){
+        do{
+            try store.collection("exampleTables").document(table.number).setData(from: table)
+        }catch{
+            print("Could not write article to data base")
+        }
+    }
+    
+    func deleteTable(_ table: Table){
+        let ref = store.collection("exampleTables").document(table.number)
+        ref.delete(){error in
+            if let error{
+                print("could not delete table")
+            }
+        }
+    }
     
     
     func fetchArticles(completion: @escaping ([Article]) -> Void) {
@@ -92,6 +108,28 @@ class FirebaseRepository{
                 }
             }
             completion(products)
+        }
+    }
+    
+    func fetchTables(completion: @escaping ([Table]) -> Void) {
+        var tables: [Table] = []
+        
+        store.collection("exampleTables").getDocuments { querySnapshot, error in
+            guard let documents = querySnapshot?.documents else {
+                print("Error fetching documents: \(error)")
+                completion([])
+                return
+            }
+            
+            for document in documents {
+                do {
+                    let table = try document.data(as: Table.self)
+                    tables.append(table)
+                } catch {
+                    print("Error decoding article: \(error)")
+                }
+            }
+            completion(tables)
         }
     }
 }

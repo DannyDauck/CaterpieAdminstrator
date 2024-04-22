@@ -11,6 +11,7 @@ struct ProductChip: View {
     
     @State var product: Product
     @StateObject var vm: ExcampleTableViewViewmodel
+    let am = AudioManager()
     
     var body: some View {
         VStack{
@@ -21,6 +22,16 @@ struct ProductChip: View {
             .padding(3)
             .background(vm.categoryColors[product.category])
             .cornerRadius(8.0)
+            .onTapGesture {
+                am.play(.click)
+                if vm.currentTable == nil{
+                    vm.currentProduct = product
+                    vm.infoIsPresent = true
+                }else{
+                    vm.inputString = String(product.plu)
+                    vm.getOrder()
+                }
+            }
     }
 }
 

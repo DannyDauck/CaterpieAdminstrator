@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		D50883302BCFC766009D1E45 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = D508832F2BCFC766009D1E45 /* Secrets.swift */; };
+		D511947F2BD63B3B00384066 /* OrderRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D511947E2BD63B3B00384066 /* OrderRow.swift */; };
+		D51194812BD650CA00384066 /* ProductInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D51194802BD650CA00384066 /* ProductInfoView.swift */; };
 		D5199CDA2BB1F9A6001B3967 /* CaterpieAdminstratorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5199CD92BB1F9A6001B3967 /* CaterpieAdminstratorApp.swift */; };
 		D5199CDE2BB1F9A7001B3967 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D5199CDD2BB1F9A7001B3967 /* Assets.xcassets */; };
 		D5199CE12BB1F9A7001B3967 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D5199CE02BB1F9A7001B3967 /* Preview Assets.xcassets */; };
@@ -66,6 +68,8 @@
 		D58FE1392BD591B400E93182 /* Keypad.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58FE1382BD591B400E93182 /* Keypad.swift */; };
 		D58FE13D2BD5950300E93182 /* clear_trash.wav in Resources */ = {isa = PBXBuildFile; fileRef = D58FE13B2BD5950300E93182 /* clear_trash.wav */; };
 		D58FE13E2BD5950300E93182 /* button_click.wav in Resources */ = {isa = PBXBuildFile; fileRef = D58FE13C2BD5950300E93182 /* button_click.wav */; };
+		D58FE1402BD6182100E93182 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58FE13F2BD6182100E93182 /* Order.swift */; };
+		D58FE1422BD619F200E93182 /* Table.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58FE1412BD619F200E93182 /* Table.swift */; };
 		D5FC868F2BCC756F005EB0D9 /* ApiRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FC868E2BCC756F005EB0D9 /* ApiRepository.swift */; };
 		D5FC86912BCC7E2A005EB0D9 /* Cocktail.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FC86902BCC7E2A005EB0D9 /* Cocktail.swift */; };
 		D5FC86942BCC7EAA005EB0D9 /* CocktailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FC86932BCC7EAA005EB0D9 /* CocktailView.swift */; };
@@ -74,6 +78,8 @@
 
 /* Begin PBXFileReference section */
 		D508832F2BCFC766009D1E45 /* Secrets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
+		D511947E2BD63B3B00384066 /* OrderRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderRow.swift; sourceTree = "<group>"; };
+		D51194802BD650CA00384066 /* ProductInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductInfoView.swift; sourceTree = "<group>"; };
 		D5199CD62BB1F9A6001B3967 /* CaterpieAdminstrator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CaterpieAdminstrator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5199CD92BB1F9A6001B3967 /* CaterpieAdminstratorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaterpieAdminstratorApp.swift; sourceTree = "<group>"; };
 		D5199CDD2BB1F9A7001B3967 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -112,6 +118,8 @@
 		D58FE1382BD591B400E93182 /* Keypad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keypad.swift; sourceTree = "<group>"; };
 		D58FE13B2BD5950300E93182 /* clear_trash.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = clear_trash.wav; sourceTree = "<group>"; };
 		D58FE13C2BD5950300E93182 /* button_click.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = button_click.wav; sourceTree = "<group>"; };
+		D58FE13F2BD6182100E93182 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
+		D58FE1412BD619F200E93182 /* Table.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Table.swift; sourceTree = "<group>"; };
 		D5FC868E2BCC756F005EB0D9 /* ApiRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRepository.swift; sourceTree = "<group>"; };
 		D5FC86902BCC7E2A005EB0D9 /* Cocktail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cocktail.swift; sourceTree = "<group>"; };
 		D5FC86932BCC7EAA005EB0D9 /* CocktailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailView.swift; sourceTree = "<group>"; };
@@ -236,6 +244,8 @@
 				D58FE0FF2BD3C46200E93182 /* Product.swift */,
 				D58FE1012BD3C50D00E93182 /* ArticleDependency.swift */,
 				D58FE1132BD4013600E93182 /* BluetoothPrinter.swift */,
+				D58FE13F2BD6182100E93182 /* Order.swift */,
+				D58FE1412BD619F200E93182 /* Table.swift */,
 			);
 			path = DataModels;
 			sourceTree = "<group>";
@@ -362,6 +372,7 @@
 			isa = PBXGroup;
 			children = (
 				D58FE1352BD5717700E93182 /* ProductChip.swift */,
+				D51194802BD650CA00384066 /* ProductInfoView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -370,6 +381,7 @@
 			isa = PBXGroup;
 			children = (
 				D58FE1382BD591B400E93182 /* Keypad.swift */,
+				D511947E2BD63B3B00384066 /* OrderRow.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -504,6 +516,7 @@
 				D58FE11F2BD4032100E93182 /* ColorManager.swift in Sources */,
 				D58FE1022BD3C50D00E93182 /* ArticleDependency.swift in Sources */,
 				D58FE1332BD5691D00E93182 /* ExcampleTableViewViewmodel.swift in Sources */,
+				D511947F2BD63B3B00384066 /* OrderRow.swift in Sources */,
 				D5199CF82BB21A39001B3967 /* Units.swift in Sources */,
 				D5199CFA2BB2A557001B3967 /* Article.swift in Sources */,
 				D58FE0FE2BD3C3C000E93182 /* AppendProductView.swift in Sources */,
@@ -512,6 +525,7 @@
 				D58FE11D2BD402C100E93182 /* AudioManager.swift in Sources */,
 				D58FE10B2BD3F26A00E93182 /* LoginViewViewmodel.swift in Sources */,
 				D58FE1242BD44C6F00E93182 /* BTPrinterViewModel.swift in Sources */,
+				D58FE1422BD619F200E93182 /* Table.swift in Sources */,
 				D5199D362BB2ECC2001B3967 /* FirebaseRepository.swift in Sources */,
 				D58FE12E2BD563CD00E93182 /* TableOverviewView.swift in Sources */,
 				D58FE1002BD3C46200E93182 /* Product.swift in Sources */,
@@ -522,7 +536,9 @@
 				D5199D412BB2F9A7001B3967 /* ArticleOverview.swift in Sources */,
 				D58FE1142BD4013600E93182 /* BluetoothPrinter.swift in Sources */,
 				D5199CDA2BB1F9A6001B3967 /* CaterpieAdminstratorApp.swift in Sources */,
+				D51194812BD650CA00384066 /* ProductInfoView.swift in Sources */,
 				D58FE1072BD3E5BD00E93182 /* LoginView.swift in Sources */,
+				D58FE1402BD6182100E93182 /* Order.swift in Sources */,
 				D58FE10D2BD3F7A400E93182 /* AppendProductViewModel.swift in Sources */,
 				D58FE12C2BD5635200E93182 /* SearchView.swift in Sources */,
 				D5199CF42BB216DE001B3967 /* NewArticleViewViewmodel.swift in Sources */,

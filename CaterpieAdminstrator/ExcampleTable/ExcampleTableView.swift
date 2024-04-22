@@ -10,6 +10,7 @@ import SwiftUI
 struct ExcampleTableView: View {
     
     @StateObject var vm = ExcampleTableViewViewmodel()
+    @StateObject var btVm = BTPrinterViewModel.shared
     
     var body: some View {
         TabView(selection: $vm.selectedTab){
@@ -44,7 +45,12 @@ struct ExcampleTableView: View {
                 .tag(3)
         }.onAppear{
             vm.loadProducts()
-        }
+            if btVm.printer == nil{
+                btVm.sheetIsPresent = true
+            }
+        }.sheet(isPresented: $btVm.sheetIsPresent){
+            BTDeviceChoiceView()
+        }.navigationTitle("Order")
     }
 }
 
