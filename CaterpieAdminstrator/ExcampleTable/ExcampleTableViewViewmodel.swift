@@ -78,7 +78,7 @@ class ExcampleTableViewViewmodel: ObservableObject{
         }
     }
     
-    private func calculateProductTable(_ rowCount: Int = 5){
+    private func calculateProductTable(_ rowCount: Int = 4){
         var newRow: [Product] = []
         for (index, product) in products.enumerated(){
             newRow.append(product)
@@ -94,10 +94,15 @@ class ExcampleTableViewViewmodel: ObservableObject{
     }
     
     func filterProducts(){
-        products = allProducts.filter{product in
-            product.name.contains(searchText)||product.category.contains(searchText)||product.tags.filter{tag in
-                tag.contains(searchText)
-            }.isEmpty == false
+        if searchText.isEmpty{
+            products = allProducts
+            calculateProductTable(4)
+        }else{
+            products = allProducts.filter{product in
+                product.name.contains(searchText)||product.category.contains(searchText)||product.tags.filter{tag in
+                    tag.contains(searchText)
+                }.isEmpty == false
+            }
         }
         currentProducts = []
         calculateProductTable()
@@ -288,6 +293,7 @@ class ExcampleTableViewViewmodel: ObservableObject{
         repo.writeTableToFirebase(currentTable!)
         BTPrinterViewModel.shared.printOrder(currentTable!.number, stornoArray, true)
         currentTable = nil
+
         stornoArray = []
         stornoIsActive = false
     }

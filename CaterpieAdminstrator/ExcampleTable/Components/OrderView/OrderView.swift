@@ -11,6 +11,8 @@ struct OrderView: View {
     
     @StateObject var vm: ExcampleTableViewViewmodel
     @StateObject var btVm = BTPrinterViewModel.shared
+    @State var orderString: String = ""
+    @State var orderPrice: String = ""
     
     var body: some View {
         VStack{
@@ -40,10 +42,31 @@ struct OrderView: View {
                             .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
                             .foregroundStyle(vm.headerColor)
                     }
+                    
                 }
                 Spacer()
             }.padding(.bottom, 5)
                 .background(.black.opacity(0.7))
+            HStack{
+                if vm.lastOrder != nil && vm.currentTable != nil{
+                    Text(orderString)
+                        .font(.title2)
+                        .padding(.leading)
+                        .onChange(of: vm.lastOrder, {
+                            orderString = "\(vm.lastOrder!.count) \(vm.lastOrder!.name)"
+                            orderPrice = " \(numberFormat(vm.lastOrder!.price))"
+                        })
+                        .onAppear{
+                            orderString = "\(vm.lastOrder!.count) \(vm.lastOrder!.name)"
+                            orderPrice = " \(numberFormat(vm.lastOrder!.price))"
+                        }
+                    Spacer()
+                    Text(orderPrice)
+                        .padding(.trailing)
+                }
+            }.background(.black.opacity(0.6))
+                .padding(0)
+
             if vm.invalidInput{
                 ZStack{
                     Text(vm.invalidInputString)
@@ -95,9 +118,7 @@ struct OrderView: View {
                         Spacer()
                     }
                     if !vm.stornoIsActive{
-                        if vm.lastOrder != nil{
-                            OrderRow(order: vm.lastOrder!, isLastOrder: true)
-                        }
+                        
                         ScrollView{
                             ForEach(vm.currentOrder, id: \.name){
                                 OrderRow(order: $0)
@@ -115,7 +136,7 @@ struct OrderView: View {
             Spacer()
             Keypad(vm: vm)
                 .padding(0)
-                .padding(.bottom, 5)
+                
         }.background(
             ZStack{
                 AsyncImage(url: URL(string: ColorManager.shared.backgroundURL), content: ({image in

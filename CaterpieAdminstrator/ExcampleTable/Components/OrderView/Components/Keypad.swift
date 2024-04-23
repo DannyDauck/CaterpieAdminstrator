@@ -21,9 +21,11 @@ struct Keypad: View {
                     if vm.stornoIsActive{
                         //Stornomethode
                         vm.storno()
+                        am.play(.trash)
                     }else{
                         if vm.currentTable != nil{
                             vm.stornoIsActive = true
+                            am.play(.click)
                         }
                     }
                 }){
@@ -237,7 +239,7 @@ struct Keypad: View {
                         }
                     }){
                         Text("Tisch")
-                            .frame(height: 78)
+                            .frame(height: 76)
                             .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
                             .foregroundStyle(.white)
                             .background(cm.btnBgInactive)
@@ -255,7 +257,7 @@ struct Keypad: View {
                         }
                     }){
                         Text("OK")
-                            .frame(height: 78)
+                            .frame(height: 76)
                             .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
                             .foregroundStyle(cm.txtImportant)
                             .background(cm.primary)

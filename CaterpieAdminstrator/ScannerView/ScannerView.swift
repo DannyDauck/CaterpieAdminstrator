@@ -91,7 +91,7 @@ struct ScannerView: View {
                 }
             }) {
                 ImagePicker(capturedImage: $capturedImage)
-            }
+            }.navigationTitle("Artikel erfassen")
             
         }
         

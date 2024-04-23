@@ -10,11 +10,22 @@ import SwiftUI
 struct SearchView: View {
     
     @StateObject var vm: ExcampleTableViewViewmodel
+    @State var orderString = ""
     
     var body: some View {
         ZStack{
-            
             VStack{
+                HStack{
+                    if vm.lastOrder != nil && vm.currentTable != nil{
+                        Text(orderString)
+                            .font(.title2)
+                            .padding(.leading)
+                            .onChange(of: vm.lastOrder, {
+                                orderString = vm.lastOrder!.name + " boniert"
+                            })
+                    }
+                    Spacer()
+                }.background(.black)
                 HStack(spacing: 0){
                     TextField("search", text: $vm.searchText)
                         .font(.title)

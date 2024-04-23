@@ -8,7 +8,7 @@
 import Foundation
 
 
-struct Order: Codable{
+struct Order: Codable, Equatable{
     
     var count: Int
     var name: String

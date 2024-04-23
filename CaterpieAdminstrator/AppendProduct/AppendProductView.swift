@@ -163,7 +163,7 @@ struct AppendProductView: View {
         }.onAppear{
             //Wieder einkommentiereten wenn UI fertig
             vm.fetchArticles()
-        }
+        }.navigationTitle("Produkt anlegen")
     }
 }
 

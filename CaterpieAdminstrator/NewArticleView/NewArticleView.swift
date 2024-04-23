@@ -221,7 +221,7 @@ struct NewArticleView: View {
                         .background(Capsule().foregroundStyle(LinearGradient(colors: [.yellow, .gray], startPoint: .bottomLeading, endPoint: .topTrailing)))
                 }.padding(.top, 30)
             }
-        }
+        }.navigationTitle("Artikel anlegen")
         
     }
 }
