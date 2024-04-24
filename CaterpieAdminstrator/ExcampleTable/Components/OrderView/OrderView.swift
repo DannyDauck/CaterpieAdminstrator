@@ -101,6 +101,9 @@ struct OrderView: View {
                     ScrollView{
                         ForEach(vm.currentTable?.orders ?? [], id: \.name){order in
                             OrderRow(order: order)
+                                .onTapGesture {
+                                    
+                                }
                                 .onLongPressGesture{
                                     if vm.stornoIsActive{
                                         vm.stornoArray.append(order)
