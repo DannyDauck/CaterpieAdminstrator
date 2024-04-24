@@ -266,7 +266,10 @@ struct Keypad: View {
                     }
                 }
             }
-        }.frame(height: 240)
+            Divider()
+                .padding(0)
+                .background(.black)
+        }.frame(height: 220)
     }
 }
 

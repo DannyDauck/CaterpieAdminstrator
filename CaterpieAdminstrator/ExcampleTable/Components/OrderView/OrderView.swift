@@ -15,7 +15,7 @@ struct OrderView: View {
     @State var orderPrice: String = ""
     
     var body: some View {
-        VStack{
+        VStack(spacing: 0){
             HStack{
                 Spacer()
                 if vm.currentTable == nil{
@@ -66,7 +66,7 @@ struct OrderView: View {
                 }
             }.background(.black.opacity(0.6))
                 .padding(0)
-
+            
             if vm.invalidInput{
                 ZStack{
                     Text(vm.invalidInputString)
@@ -136,7 +136,7 @@ struct OrderView: View {
             Spacer()
             Keypad(vm: vm)
                 .padding(0)
-                
+            
         }.background(
             ZStack{
                 AsyncImage(url: URL(string: ColorManager.shared.backgroundURL), content: ({image in
