@@ -66,6 +66,14 @@ class FirebaseRepository{
     }
     
     
+    func setRadioStream(_ stream: String){
+        do{
+            try store.collection("excampleAudio").document("audioURL").setData(["URL" : stream])
+        }catch{
+            print("could not set stream")
+        }
+    }
+    
     func fetchArticles(completion: @escaping ([Article]) -> Void) {
         var articles: [Article] = []
         

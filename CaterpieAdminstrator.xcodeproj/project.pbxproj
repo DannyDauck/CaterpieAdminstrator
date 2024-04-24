@@ -46,6 +46,8 @@
 		D5199D362BB2ECC2001B3967 /* FirebaseRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5199D352BB2ECC2001B3967 /* FirebaseRepository.swift */; };
 		D5199D412BB2F9A7001B3967 /* ArticleOverview.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5199D402BB2F9A7001B3967 /* ArticleOverview.swift */; };
 		D5199D432BB2F9C4001B3967 /* ArticleOverviewViewmodel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5199D422BB2F9C4001B3967 /* ArticleOverviewViewmodel.swift */; };
+		D5608D4F2BD9AE370022C74E /* RadioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5608D4E2BD9AE370022C74E /* RadioView.swift */; };
+		D5608D522BD9AEFB0022C74E /* RadioStations.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5608D512BD9AEFB0022C74E /* RadioStations.swift */; };
 		D58FE0FE2BD3C3C000E93182 /* AppendProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58FE0FD2BD3C3C000E93182 /* AppendProductView.swift */; };
 		D58FE1002BD3C46200E93182 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58FE0FF2BD3C46200E93182 /* Product.swift */; };
 		D58FE1022BD3C50D00E93182 /* ArticleDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58FE1012BD3C50D00E93182 /* ArticleDependency.swift */; };
@@ -96,6 +98,8 @@
 		D5199D352BB2ECC2001B3967 /* FirebaseRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseRepository.swift; sourceTree = "<group>"; };
 		D5199D402BB2F9A7001B3967 /* ArticleOverview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleOverview.swift; sourceTree = "<group>"; };
 		D5199D422BB2F9C4001B3967 /* ArticleOverviewViewmodel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleOverviewViewmodel.swift; sourceTree = "<group>"; };
+		D5608D4E2BD9AE370022C74E /* RadioView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioView.swift; sourceTree = "<group>"; };
+		D5608D512BD9AEFB0022C74E /* RadioStations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioStations.swift; sourceTree = "<group>"; };
 		D58FE0FD2BD3C3C000E93182 /* AppendProductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppendProductView.swift; sourceTree = "<group>"; };
 		D58FE0FF2BD3C46200E93182 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		D58FE1012BD3C50D00E93182 /* ArticleDependency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDependency.swift; sourceTree = "<group>"; };
@@ -178,6 +182,7 @@
 		D5199CD82BB1F9A6001B3967 /* CaterpieAdminstrator */ = {
 			isa = PBXGroup;
 			children = (
+				D5608D4B2BD9AC930022C74E /* Radio auswählen */,
 				D58FE13A2BD5950300E93182 /* audioSRC */,
 				D58FE1252BD5621500E93182 /* ExcampleTable */,
 				D58FE1152BD401A500E93182 /* BluetoothDeviceChoice */,
@@ -274,6 +279,16 @@
 				D5199D422BB2F9C4001B3967 /* ArticleOverviewViewmodel.swift */,
 			);
 			path = ArticleOverview;
+			sourceTree = "<group>";
+		};
+		D5608D4B2BD9AC930022C74E /* Radio auswählen */ = {
+			isa = PBXGroup;
+			children = (
+				D5608D4E2BD9AE370022C74E /* RadioView.swift */,
+				D5608D512BD9AEFB0022C74E /* RadioStations.swift */,
+			);
+			name = "Radio auswählen";
+			path = "Radio auswählen";
 			sourceTree = "<group>";
 		};
 		D58FE0FC2BD3C39D00E93182 /* AppendProduct */ = {
@@ -524,8 +539,10 @@
 				D58FE1122BD400C700E93182 /* BluetoothManager.swift in Sources */,
 				D58FE11D2BD402C100E93182 /* AudioManager.swift in Sources */,
 				D58FE10B2BD3F26A00E93182 /* LoginViewViewmodel.swift in Sources */,
+				D5608D522BD9AEFB0022C74E /* RadioStations.swift in Sources */,
 				D58FE1242BD44C6F00E93182 /* BTPrinterViewModel.swift in Sources */,
 				D58FE1422BD619F200E93182 /* Table.swift in Sources */,
+				D5608D4F2BD9AE370022C74E /* RadioView.swift in Sources */,
 				D5199D362BB2ECC2001B3967 /* FirebaseRepository.swift in Sources */,
 				D58FE12E2BD563CD00E93182 /* TableOverviewView.swift in Sources */,
 				D58FE1002BD3C46200E93182 /* Product.swift in Sources */,

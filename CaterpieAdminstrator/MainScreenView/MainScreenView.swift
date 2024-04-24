@@ -75,6 +75,16 @@ struct MainScreenView: View {
                         .padding(5)
                         .background(Capsule().foregroundStyle(LinearGradient(colors: [.gray, .yellow], startPoint: .bottomLeading, endPoint: .topTrailing)))
                 }
+                NavigationLink(destination: RadioView()){
+                    Text("Radio")
+                        .font(.title)
+                        .padding(.vertical, 5)
+                        .foregroundColor(.black)
+                        .frame(width: 300)
+                        .background(Capsule().foregroundColor(.white))
+                        .padding(5)
+                        .background(Capsule().foregroundStyle(LinearGradient(colors: [.yellow, .gray], startPoint: .bottomLeading, endPoint: .topTrailing)))
+                }
                 Spacer()
                 HStack{
                     Spacer()
