@@ -9,13 +9,18 @@ import SwiftUI
 
 struct RadioView: View {
     
+    //This file is for showcase how the app is interacting with the Caterpie main module. A click on a button will change the URL string in the firebase, while the AudioSettingsView from the main module has a listener on this file and starts a player when the URL changes.
+    
     private var repo = FirebaseRepository.shared
+    @State var animation = false
+    @State var rainbowColorIndex = 0
     
     var body: some View {
         VStack{
             Spacer()
             Button(action: {
                 repo.setRadioStream(RadioStations.bigFM.rawValue)
+                animation = true
             }){
                 Image(.bigFMSvg)
                     .resizable()
@@ -29,6 +34,7 @@ struct RadioView: View {
                 .background(Capsule().foregroundStyle(LinearGradient(colors: [.yellow, .gray], startPoint: .bottomLeading, endPoint: .topTrailing)))
             Button(action: {
                 repo.setRadioStream(RadioStations.jumpFM.rawValue)
+                animation = true
             }){
                 Image(.jumpRadio)
                     .resizable()
@@ -41,7 +47,24 @@ struct RadioView: View {
                 .padding(5)
                 .background(Capsule().foregroundStyle(LinearGradient(colors: [.yellow, .gray], startPoint: .bottomLeading, endPoint: .topTrailing)))
             Button(action: {
+                repo.setRadioStream(RadioStations.jahfariRadio.rawValue)
+                animation = true
+            }){
+                Image(.jahfariRadio)
+                    .resizable()
+                    .padding(2)
+                    .background(Circle().foregroundColor(.black))
+                    .frame(width: 40, height: 40)
+                Text("JahFari Radio")
+            }.padding([.leading, .trailing], 20)
+                .foregroundColor(.black)
+                .frame(width: 300)
+                .background(Capsule().foregroundColor(.white))
+                .padding(5)
+                .background(Capsule().foregroundStyle(LinearGradient(colors: [.yellow, .gray], startPoint: .bottomLeading, endPoint: .topTrailing)))
+            Button(action: {
                 repo.setRadioStream("n.a.")
+                animation = false
             }){
                 Text("stop radio")
                     .font(.title)
@@ -52,14 +75,11 @@ struct RadioView: View {
                 .background(Capsule().foregroundColor(ColorManager.shared.primary))
                 .padding(5)
                 .background(Capsule().foregroundStyle(LinearGradient(colors: [.yellow, .gray], startPoint: .bottomLeading, endPoint: .topTrailing)))
+            
             Spacer()
         }.navigationTitle("Radio")
             .background(
                 ZStack{
-                   /* Image(.zero)
-                        .resizable()
-                        .scaledToFill()
-                    */
                     AsyncImage(url: URL(string: ColorManager.shared.backgroundURL), content: ({image in
                         image
                             .resizable()

@@ -31,6 +31,16 @@ class ColorManager: ObservableObject{
     var menueSubItemBG = LinearGradient(colors: [.white, .gray], startPoint: .bottomLeading, endPoint: .topTrailing)
     var menueSubItemBGInversed = LinearGradient(colors: [.gray, .white], startPoint: .bottomLeading, endPoint: .topTrailing)
     
+    let rainbowGradientArray = [
+        LinearGradient(colors: [.cyan, .green, .yellow, .orange, .red, .purple, .blue], startPoint: .leading, endPoint: .trailing),
+        LinearGradient(colors: [.green, .yellow, .orange, .red, .purple, .blue, .cyan], startPoint: .leading, endPoint: .trailing),
+        LinearGradient(colors: [.yellow, .orange, .red, .purple, .blue, .cyan, .green], startPoint: .leading, endPoint: .trailing),
+        LinearGradient(colors: [.orange, .red, .purple, .blue, .cyan, .green, .yellow], startPoint: .leading, endPoint: .trailing),
+        LinearGradient(colors: [.red, .purple, .blue, .cyan, .green, .yellow, .orange], startPoint: .leading, endPoint: .trailing),
+        LinearGradient(colors: [.purple, .blue, .cyan, .green, .yellow, .orange, .red], startPoint: .leading, endPoint: .trailing),
+        LinearGradient(colors: [.blue, .cyan, .green, .yellow, .orange, .red, .purple], startPoint: .leading, endPoint: .trailing)
+    ]
+    
     var exceptionGradient = LinearGradient(colors: [.red, .red, .orange, .white, .red], startPoint: .bottomLeading, endPoint: .topTrailing)
     
     func getColor(_ color: String) -> Color {
